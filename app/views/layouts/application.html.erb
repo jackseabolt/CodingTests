@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudentTest</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  		<%= render 'layouts/nav' %>
+  		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8 col-md-push-2">
+					<% flash.each do |key, message| %> 
+						<div id="myAlert" class="alert alert-<%= key %> text-center">
+						<a href="#current-pane" class="close" data-target="myAlert" data-dismiss="alert" aria-label="close" id="hide">&times;</a>
+							<p><%= message %></p>
+						</div>
+
+					<% end %>
+				</div>
+			</div>
+		</div> 
+    <%= yield %>
+    	<div class="container-fluid">
+			<div class="row footer">
+				<div class="col-md-8 col-md-push-2">
+					<h5>Home &nbsp;	&nbsp;| &nbsp;&nbsp; Tests &nbsp;&nbsp;|&nbsp;&nbsp;Contact&nbsp;&nbsp;| &nbsp;&nbsp; Disclaimer</h5>
+				</div>
+			</div>
+		</div> 
+  </body>
+</html>

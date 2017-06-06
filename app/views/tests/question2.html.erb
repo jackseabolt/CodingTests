@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-md-8 col-md-push-2">
+			<h4>Current Score: <%= @test.score %></h4>
+			<br /><br />
+		
+
+			<div class="form_group">
+			<%= form_tag question2_path(@test), :method=> 'get' do %>
+				<h5>What opening tag would you use for a section CSS in the head portion of an HTML file?</h5>
+				<div class="form-group">
+					<%= text_field_tag :answer2, params[:answer2], class: 'form-control' %>
+				</div>
+				<% if !flash[:success] && !flash[:danger] %>
+					<div class="form-group">
+						<%= submit_tag "Submit", class: "btn btn-primary" %>
+					</div>
+				<% end %>
+			<% end %>
+			</div>
+
+			<% if flash[:success] || flash[:danger] %>
+				<%= link_to "Continue", question3_path, class: "btn btn-success pull-right" %> 
+			<% end %> 
+		</div>
+
+	</div>
+
+</div>

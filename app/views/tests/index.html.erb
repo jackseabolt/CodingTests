@@ -1,0 +1,34 @@
+<div class="container-fluid">
+
+<div class="row">
+		<div class="col-md-8 col-md-push-2 top_section">
+			<h4>HTML Test</h4>
+			<p>Test your knowledge of HTML with our online assessment. You may take the test as many times as you would like. Good luck!</p>
+			<%= form_for @test do |t| %>
+				<%= t.hidden_field :score, value: 0 %>
+				<%= t.submit "Start", class: 'btn btn-success' %> 
+			<% end %>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-8 col-md-push-2">
+			<h4>Previous Results</h4>
+			<br />
+			<% if @tests.empty? %>
+				<p><i>No tests taken yet</i></p>
+			<% else %> 
+				<% @tests.each do |t| %> 
+					<div class="col-md-12 index_test">
+					<h4>HTML Test</h4>
+					<h5>Score: <%= t.score %>/3</h5>
+					<p><i><%= time_ago_in_words(t.created_at) %></i></p>
+					<%= link_to "Delete", test_path(t), method: :delete, class: 'btn btn-danger' %> 
+					</div>
+				<% end %>
+			<% end %>
+			<%= will_paginate @tests, class: 'will_paginate' %> 
+		</div>
+	</div>
+</div>
