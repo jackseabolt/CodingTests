@@ -6,11 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
   </head>
 
   <body>
   		<%= render 'layouts/nav' %>
-  		<div class="container-fluid">
+  		<div class="container-fluid flash_container">
 			<div class="row">
 				<div class="col-md-8 col-md-push-2">
 					<% flash.each do |key, message| %> 

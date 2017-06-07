@@ -56,6 +56,10 @@ class TestsController < ApplicationController
 		end
 	end
 
+	def results
+		@test = Test.find(params[:id])
+	end
+
 	def create 
 		@test = Test.create(test_params)
 		if @test.save 

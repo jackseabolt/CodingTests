@@ -1,6 +1,14 @@
 $nav: black; 
 
-
+.dropdown-menu {
+	background-color: black !important; 
+}
+.dropdown-menu:hover {
+	background-color: black !important; 
+}
+a:focus {
+    background-color: none !important;
+}
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -17,7 +25,7 @@ $nav: black;
 }
 .navbar {
 	padding: 10px; 
-	position: fixed;
+	position: fixed !important;
 	z-index: 5;
 	top: 0px;
 	width: 100%;
@@ -52,4 +60,8 @@ nav {
 }
 .nav_search {
 	margin-left: 40px !important;
+}
+.spacer {
+	height: 68px;
+	background-color: red;
 }
