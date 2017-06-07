@@ -103,3 +103,15 @@
 		text-decoration: none; 
 	} 
 }
+@media screen and (max-width: 767px){
+	.home_page_images {
+		width: 100%;
+		border-radius: 5px;
+	}
+	.title {
+		font-size: 36px;
+	}
+	.title_sub {
+		font-size: 14px;
+	}
+}
