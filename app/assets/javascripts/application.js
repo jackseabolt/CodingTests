@@ -20,8 +20,16 @@
 $(document).on('turbolinks:load', function() {
 
 
-	$('#question_1_trigger').click(function(){
-		$('#myAlert').hide();
-	});
+	// $('#question_1_trigger').click(function(){
+	// 	$('#myAlert').hide();
+	// });
+
+	function parallex(){
+		var ypos = window.pageYOffset;
+		var pic = document.getElementById('head_section');
+		pic.style.top = ypos * 0.6 + 'px'; 
+	}
+
+	window.addEventListener('scroll', parallex);
 
 });
