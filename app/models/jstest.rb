@@ -1,0 +1,2 @@
+class Jstest < ApplicationRecord
+end

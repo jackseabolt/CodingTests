@@ -1,0 +1,46 @@
+<div id="head_section" class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h5 class="title">JavaScript Test</h5>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid background-white">
+
+	<div class="row">
+		<div class="col-sm-8 col-sm-push-2 top_section">
+			<h4>JavaScript Test</h4>
+			<p>Test your knowledge of JavaScript with our online assessment. You may take the test as many times as you would like. Good luck!</p>
+			<%= form_for @test do |t| %>
+				<%= t.hidden_field :score, value: 0 %>
+				<%= t.submit "Start", class: 'btn btn-success' %> 
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<% if @tests.empty? %>
+
+		<% else %>
+			<div class="col-sm-8 col-sm-push-2">
+				<h4>Previous Results</h4>
+				<br />
+					<% @tests.each do |t| %> 
+						<div class="col-md-12 index_test">
+							<h4>JavaScript Test</h4>
+							<h5>Score: <%= t.score %>/3</h5>
+							<p><i><%= time_ago_in_words(t.created_at) %></i></p>
+							<%= link_to "Delete", test_path(t), method: :delete, class: 'btn btn-danger' %> 
+						</div>
+					<% end %>
+				<%= will_paginate @tests, class: 'will_paginate text-center' %> 	
+			</div>
+		<% end %>
+	</div>
+
+
+
+	
+	
+</div>
