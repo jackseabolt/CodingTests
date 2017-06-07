@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-<div class="row">
+	<div class="row">
 		<div class="col-md-8 col-md-push-2 top_section">
 			<h4>HTML Test</h4>
 			<p>Test your knowledge of HTML with our online assessment. You may take the test as many times as you would like. Good luck!</p>
@@ -10,7 +10,6 @@
 			<% end %>
 		</div>
 	</div>
-
 
 	<div class="row">
 		<div class="col-md-8 col-md-push-2">
@@ -28,7 +27,8 @@
 					</div>
 				<% end %>
 			<% end %>
-			<%= will_paginate @tests, class: 'will_paginate' %> 
+			<%= will_paginate @tests, class: 'will_paginate text-center' %> 
 		</div>
 	</div>
+	
 </div>

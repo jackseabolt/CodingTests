@@ -45,8 +45,10 @@ class TestsController < ApplicationController
 				flash.now[:success] = "You got all the questions right! Great!"
 			elsif @test.score == 2 
 				flash.now[:success] = "You finished! Great!"
-			else 
+			elsif @test.score == 1
 				flash.now[:success] = "You finished, but we think you could do better"
+			elsif @test.score == 0 
+				flash.now[:danger] = "You didn't get any questions right. You should study some more"
 			end
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
