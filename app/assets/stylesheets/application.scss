@@ -17,8 +17,9 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.background-grey {
-	background-color: grey;
+.background-white {
+	background-color: #fff !important;
+	z-index: 9;
 }
 .footer {
 	background-color: #2e2e2e;
@@ -31,10 +32,11 @@
 .alert {
 	margin-top: 30px;
 }
-.head_section {
+#head_section {
 	background-image: image-url('background.jpg');
 	height: 300px;
 	position: relative;
+	z-index: -1;
 }
 .home_page_images {
 	width: 180px;
