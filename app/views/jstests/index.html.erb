@@ -1,7 +1,7 @@
 <div id="head_section" class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<h5 class="title">JavaScript Test</h5>
+			<h5 class="title2">JavaScript Test</h5>
 		</div>
 	</div>
 </div>
@@ -31,7 +31,7 @@
 							<h4>JavaScript Test</h4>
 							<h5>Score: <%= t.score %>/3</h5>
 							<p><i><%= time_ago_in_words(t.created_at) %></i></p>
-							<%= link_to "Delete", test_path(t), method: :delete, class: 'btn btn-danger' %> 
+							<%= link_to "Delete", jstest_path(t), method: :delete, class: 'btn btn-danger' %> 
 						</div>
 					<% end %>
 				<%= will_paginate @tests, class: 'will_paginate text-center' %> 	

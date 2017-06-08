@@ -1,17 +1,16 @@
 <div class="container-fluid">
 
 	<div class="row background-white">
-
-		<div class="col-md-8 col-md-push-2 score_container">
+		<div class="col-md-8 col-md-push-2 col-sm-8 col-sm-push-2 score_container">
 			<h5 class="text-center">Current Score: <%= @test.score %></h5>
 		</div>
-		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
 
+		<div class="col-md-6 col-md-push-3 question_container">
 			<div class="form_group">
-			<%= form_tag question3_path(@test), :method=> 'get' do %>
-				<h5>3. Write the closing tag for a div element</h5>
+			<%= form_tag jsquestion1_path(@test), method: :get do %>
+				<h5>1. Write the opening HTML tag you would place javascript inside.</h5>
 				<div class="form-group">
-					<%= text_area_tag :answer, params[:answer], class: 'form-control' %>
+					<%= text_area_tag :answer, params[:answer], class: 'form-control'%>
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
 				<div class="form-group">
@@ -22,10 +21,8 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Finish", results_path, class: "btn btn-success pull-right" %> 
+				<%= link_to "Next Question", jsquestion2_path(@test), class:"btn btn-success pull-right" %>
 			<% end %> 
 		</div>
-
 	</div>
-
 </div>

@@ -74,7 +74,7 @@ class TestsController < ApplicationController
 		@test = Test.find(params[:id])
 		if @test.destroy
 			flash.now[:success] = "Your test was removed"
-			redirect_to root_path 
+			redirect_to tests_path 
 		end 
 	end 
 

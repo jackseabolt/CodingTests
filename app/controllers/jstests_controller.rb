@@ -4,9 +4,9 @@ class JstestsController < ApplicationController
 		@tests = Jstest.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
 	end 
 
-	def question1 
+	def jsquestion1 
 		@test = Jstest.find(params[:id])
-		correct_answer = "<p>"
+		correct_answer = "<script>"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			flash.now[:success] = "That is correct!"
@@ -17,9 +17,9 @@ class JstestsController < ApplicationController
 		end
 	end
 
-	def question2
+	def jsquestion2
 		@test = Jstest.find(params[:id])
-		correct_answer = "<style>"
+		correct_answer = "document.getElementById('target');"
 		user_answer = params[:answer2]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
@@ -34,9 +34,9 @@ class JstestsController < ApplicationController
 		end  
 	end 
 	
-	def question3 
+	def jsquestion3 
 		@test = Jstest.find(params[:id])
-		correct_answer = "</div>"
+		correct_answer = "var x = document.getElementById('target');"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score += 1
@@ -55,17 +55,17 @@ class JstestsController < ApplicationController
 		end
 	end
 
-	def results
+	def jsresults
 		@test = Jstest.find(params[:id])
 	end
 
 	def create 
 		@test = Jstest.create(test_params)
 		if @test.save 
-			redirect_to question1_path(@test)
+			redirect_to jsquestion1_path(@test)
 		else 
 			flash[:danger] = "There was a problem"
-			render "question1" 
+			render "jsquestion1" 
 		end 
 	end 
 
@@ -73,7 +73,7 @@ class JstestsController < ApplicationController
 		@test = Jstest.find(params[:id])
 		if @test.destroy
 			flash.now[:success] = "Your test was removed"
-			redirect_to root_path 
+			redirect_to jstests_path 
 		end 
 	end 
 
