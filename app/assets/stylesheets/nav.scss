@@ -9,6 +9,10 @@ $nav: black;
 a:focus {
     background-color: none !important;
 }
+.navbar-brand {
+	position: relative; 
+	left: 10px; 
+}
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -18,8 +22,10 @@ a:focus {
   text-align: center;
 }
 .nav_item {
-	margin-left: 23px;
-	margin-right: 23px;
+	margin-left: 0px;
+	margin-right: 44px;
+	position: relative; 
+	left: -18px; 
 	font-size: 16px;
 	color: white !important; 
 }
@@ -64,4 +70,10 @@ nav {
 .spacer {
 	height: 68px;
 	background-color: red;
+}
+@media screen and (max-width: 767px){
+	.nav_item {
+		left: 0px;
+		margin-right: 0px; 
+	}
 }

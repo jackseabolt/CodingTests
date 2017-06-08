@@ -1,13 +1,12 @@
-class TestsController < ApplicationController
-
+class JstestsController < ApplicationController
 	def index 
-		@test = Test.new 
-		@tests = Test.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
+		@test = Jstest.new 
+		@tests = Jstest.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
 	end 
 
-	def question1 
-		@test = Test.find(params[:id])
-		correct_answer = "<p>"
+	def jsquestion1 
+		@test = Jstest.find(params[:id])
+		correct_answer = "<script>"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			flash.now[:success] = "That is correct!"
@@ -18,9 +17,9 @@ class TestsController < ApplicationController
 		end
 	end
 
-	def question2
-		@test = Test.find(params[:id])
-		correct_answer = "<style>"
+	def jsquestion2
+		@test = Jstest.find(params[:id])
+		correct_answer = "document.getElementById('target');"
 		user_answer = params[:answer2]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
@@ -35,9 +34,9 @@ class TestsController < ApplicationController
 		end  
 	end 
 	
-	def question3 
-		@test = Test.find(params[:id])
-		correct_answer = "</div>"
+	def jsquestion3 
+		@test = Jstest.find(params[:id])
+		correct_answer = "var x = document.getElementById('target');"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score += 1
@@ -56,31 +55,33 @@ class TestsController < ApplicationController
 		end
 	end
 
-	def results
-		@test = Test.find(params[:id])
+	def jsresults
+		@test = Jstest.find(params[:id])
 	end
 
 	def create 
-		@test = Test.create(test_params)
+		@test = Jstest.create(test_params)
 		if @test.save 
-			redirect_to question1_path(@test)
+			redirect_to jsquestion1_path(@test)
 		else 
 			flash[:danger] = "There was a problem"
-			render "question1" 
+			render "jsquestion1" 
 		end 
 	end 
 
 	def destroy 
-		@test = Test.find(params[:id])
+		@test = Jstest.find(params[:id])
 		if @test.destroy
 			flash.now[:success] = "Your test was removed"
-			redirect_to tests_path 
+			redirect_to jstests_path 
 		end 
 	end 
 
 	private 
 
 		def test_params
-			params.require(:test).permit(:score, :user_id)
+			params.require(:jstest).permit(:score, :user_id)
 		end
+
+
 end
