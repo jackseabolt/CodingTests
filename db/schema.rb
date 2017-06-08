@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607205000) do
+ActiveRecord::Schema.define(version: 20170608162855) do
+
+  create_table "csstests", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jstests", force: :cascade do |t|
     t.integer  "score"

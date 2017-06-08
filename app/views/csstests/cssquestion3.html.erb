@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+	<div class="row background-white">
+
+		<div class="col-md-8 col-md-push-2 col-sm-8 col-sm-push-2 score_container">
+			<h5 class="text-center">Current Score: <%= @test.score %></h5>
+		</div>
+		<div class="col-md-6 col-md-push-3  question_container">
+
+			<div class="form_group">
+			<%= form_tag cssquestion3_path(@test), :method=> 'get' do %>
+				<h5>3. What CSS property controls the size of a paragraph element's text?</h5>
+				<div class="form-group">
+					<%= text_area_tag :answer, params[:answer], class: 'form-control' %>
+				</div>
+				<% if !flash[:success] && !flash[:danger] %>
+				<div class="form-group">
+					<%= submit_tag "Submit", class: "btn btn-primary" %>
+				</div>
+				<% end %>
+			<% end %>
+			</div>
+
+			<% if flash[:success] || flash[:danger] %>
+				<%= link_to "Finish", cssresults_path, class: "btn btn-success pull-right" %> 
+			<% end %> 
+		</div>
+
+	</div>
+
+</div>
