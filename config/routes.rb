@@ -31,6 +31,13 @@ Rails.application.routes.draw do
 	get "/csstests/question1/:id", to: "csstests#cssquestion1", as: 'cssquestion1'
 	get "/csstests/question2/:id", to: "csstests#cssquestion2", as: 'cssquestion2'
 	get "/csstests/question3/:id", to: "csstests#cssquestion3", as: 'cssquestion3'
+	get "/csstests/question4/:id", to: "csstests#cssquestion4", as: 'cssquestion4'
+	get "/csstests/question5/:id", to: "csstests#cssquestion5", as: 'cssquestion5'
+	get "/csstests/question6/:id", to: "csstests#cssquestion6", as: 'cssquestion6'
+	get "/csstests/question7/:id", to: "csstests#cssquestion7", as: 'cssquestion7'
+	get "/csstests/question8/:id", to: "csstests#cssquestion8", as: 'cssquestion8'
+	get "/csstests/question9/:id", to: "csstests#cssquestion9", as: 'cssquestion9'
+	get "/csstests/question10/:id", to: "csstests#cssquestion10", as: 'cssquestion10'
 	get "/csstests/results/:id", to: "csstests#cssresults", as: 'cssresults'
 
 	#root path
