@@ -19,7 +19,7 @@
 							&lt;&#47;ul&gt;<br />
 						</h5>
 						<label for="answer"></label>
-						<%= check_box_tag :answer, 'option1', false, id: 'option1_checkbox' %>
+						<%= radio_button_tag :answer, 'option1' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
@@ -29,7 +29,7 @@
 							&lt;&#47;l&gt;<br />
 						</h5>
 						<label for="answer"></label>
-						<%= check_box_tag :answer, 'option2', false, id: 'option2_checkbox' %>
+						<%= radio_button_tag :answer, 'option2' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
@@ -39,7 +39,7 @@
 							&lt;&#47;ordered&gt;<br />
 						</h5>
 						<label for="answer"></label>
-						<%= check_box_tag :answer, 'option3', false, id: 'option3_checkbox' %>
+						<%= radio_button_tag :answer, 'option3' %>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">
