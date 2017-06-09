@@ -42,19 +42,38 @@ class TestsController < ApplicationController
 		if user_answer == correct_answer
 			new_score = @test.score += 1
 			if @test.score == 3
-				flash.now[:success] = "You got all the questions right! Great!"
+				flash.now[:success] = "You got all the questions right so far! Great!"
 			elsif @test.score == 2 
-				flash.now[:success] = "You finished! Great!"
+				flash.now[:success] = "You're doing great!"
 			elsif @test.score == 1
-				flash.now[:success] = "You finished, but we think you could do better"
+				flash.now[:success] = "You got it right!"
 			elsif @test.score == 0 
-				flash.now[:danger] = "You didn't get any questions right. You should study some more"
+				flash.now[:danger] = "You haven't gotten any questions right so far."
 			end
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That is not what we were looking for" 
 		end
 	end
+
+	def question4
+		@test = Test.find(params[:id])
+		correct_answer = "false"
+		user_answer = params[:answer4]
+		if correct_answer == user_answer
+			new_score = @test.score += 1
+			if @test.score == 4
+				flash.now[:success] = "You got all of the questions right! Amazing!"
+			elsif @test.score < 4 && @test.score > 0
+				flash.now[:success] = "You got the question right!"
+			else
+				flash.now[:danger] = "You got that one right!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer4].present? && params[:answer4] != correct_answer
+			flash.now[:danger] = "That isn't what we wanted."
+		end
+	end 
 
 	def results
 		@test = Test.find(params[:id])

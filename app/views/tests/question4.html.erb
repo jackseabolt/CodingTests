@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+	<div class="row background-white">
+
+		<div class="col-md-8 col-md-push-2 score_container">
+			<h5 class="text-center">Current Score: <%= @test.score %></h5>
+		</div>
+		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
+
+			<div class="form_group">
+				<%= form_for question4_path(@test), method: :get do %> 
+					<h3>4. HTML is case-sensitive. True or false?</h3>
+					</br>
+					<div class="form-group">
+						<%= check_box_tag :answer4, true, false, id: 'true_checkbox' %>
+						<label for="answer4">True</label>
+					</div>
+					<div class="form-group">
+						<%= check_box_tag :answer4, false, false, id: 'flase_checkbox' %> 
+						<label for="answer4">False</label>
+					</div>
+					<% if !flash[:success] && !flash[:danger] %>
+						<div class="form-group">
+							<%= submit_tag "Submit", class: 'btn-primary' %> 
+						</div>
+					<% end %> 
+				<% end %> 
+			</div>
+
+			<% if flash[:success] || flash[:danger] %> 
+				<%= link_to "Finish", results_path(@test), class: 'btn btn-success pull-right' %> 
+			<% end %> 
+
+		</div>
+	</div>
+</div>

@@ -71,6 +71,14 @@ nav {
 	height: 68px;
 	background-color: red;
 }
+@media screen and (max-width: 900px){
+	.nav_item {
+		margin-right: 22px;
+		left: -28px; 
+	}
+}
+
+
 @media screen and (max-width: 767px){
 	.nav_item {
 		left: 0px;
