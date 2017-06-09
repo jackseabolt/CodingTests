@@ -21,7 +21,7 @@ class CsstestsController < ApplicationController
 	def cssquestion2
 		@test = Csstest.find(params[:id])
 		correct_answer = "#"
-		user_answer = params[:answer2]
+		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
 			if @test.score == 2
@@ -30,7 +30,7 @@ class CsstestsController < ApplicationController
 				flash.now[:success] = "That is correct!"
 			end 
 			@test.update(score: new_score)
-		elsif params[:answer2].present? && params[:answer2] != correct_answer
+		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That is incorrect"
 		end  
 	end 
@@ -42,19 +42,138 @@ class CsstestsController < ApplicationController
 		if user_answer == correct_answer
 			new_score = @test.score += 1
 			if @test.score == 3
-				flash.now[:success] = "You got all the questions right! Great!"
+				flash.now[:success] = "You've got it! Great!"
 			elsif @test.score == 2 
-				flash.now[:success] = "You finished! Great!"
+				flash.now[:success] = "That's correct! Great!"
 			elsif @test.score == 1
-				flash.now[:success] = "You finished, but we think you could do better"
+				flash.now[:success] = "Good job! That's right!"
 			elsif @test.score == 0 
-				flash.now[:danger] = "You didn't get any questions right. You should study some more"
+				flash.now[:danger] = "You got that one!"
 			end
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is not what we were looking for" 
+			flash.now[:danger] = "That is not what we were looking for." 
 		end
 	end
+
+	def cssquestion4
+		@test = Csstest.find(params[:id])
+		correct_answer = "option1"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 4
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect."
+		end  
+	end 
+
+	def cssquestion5
+		@test = Csstest.find(params[:id])
+		correct_answer = "."
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 5
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is not what we were looking for."
+		end  
+	end
+
+	def cssquestion6
+		@test = Csstest.find(params[:id])
+		correct_answer = "true"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 6
+				flash.now[:success] = "Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect."
+		end  
+	end 
+
+	def cssquestion7
+		@test = Csstest.find(params[:id])
+		correct_answer = "option3"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 7
+				flash.now[:success] = "Correct! You're on a roll!"
+			else
+				flash.now[:success] = "You got it!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is not what we were looking for."
+		end  
+	end  
+
+	def cssquestion8
+		@test = Csstest.find(params[:id])
+		correct_answer = "option2"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 8
+				flash.now[:success] = "You've gotten all the questions right so far! Good job!"
+			else
+				flash.now[:success] = "That's the right answer!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect."
+		end  
+	end 
+
+	def cssquestion9
+		@test = Csstest.find(params[:id])
+		correct_answer = "padding"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 9
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is not what we were looking for."
+		end  
+	end 
+
+	def cssquestion10
+		@test = Csstest.find(params[:id])
+		correct_answer = "option2"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 10
+				flash.now[:success] = "You got all the questions right! Wow!"
+			else
+				flash.now[:success] = "You got it! Good job!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect."
+		end  
+	end 
 
 	def cssresults
 		@test = Csstest.find(params[:id])

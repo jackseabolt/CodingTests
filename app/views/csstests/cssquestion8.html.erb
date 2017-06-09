@@ -2,33 +2,38 @@
 
 	<div class="row background-white">
 
-		<div class="col-md-8 col-md-push-2 score_container">
+		<div class="col-sm-8 col-sm-push-2 score_container">
 			<h5 class="text-center">Current Score: <%= @test.score %></h5>
 		</div>
-		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
+		<div class="col-sm-6 col-sm-push-3  question_container">
 
 			<div class="form_group">
-				<%= form_for question4_path(@test), method: :get do %> 
-					<h5>7. Which tag would you use to contain a section of JavaScript in your HTML code?</h5>
+				<%= form_for cssquestion8_path(@test), method: :get do %> 
+					<h5>8. How would you set the color of all paragraph elements to blue?</h5>
 					</br>
 					<div class="col-xs-4">
 						<h5>
-							&lt;style&gt;
-							
+							.p {<br />
+							&nbsp;&nbsp;color: blue;<br />
+							}<br />
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option1' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
-							&lt;javascript&gt;
+						p {<br />
+							&nbsp;&nbsp;color: blue;<br />
+							}<br />
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option2' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
-							&lt;script&gt;
+							p {<br />
+							&nbsp;&nbsp;font-color: blue;<br />
+							}<br />
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option3' %>
@@ -41,10 +46,11 @@
 				<% end %> 
 			</div>
 
-			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Next Question", question8_path(@test), class: 'btn btn-success pull-right top_spacing_button' %> 
+			<% if flash[:success] || flash[:danger] %>
+				<%= link_to "Next Question", cssquestion9_path(@test), class: "btn btn-success pull-right top_spacing_button" %> 
 			<% end %> 
-
 		</div>
+
 	</div>
+
 </div>

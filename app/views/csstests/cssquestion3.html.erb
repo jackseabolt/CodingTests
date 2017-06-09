@@ -22,7 +22,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Finish", cssresults_path, class: "btn btn-success pull-right" %> 
+				<%= link_to "Next Question", cssquestion4_path(@test), class: "btn btn-success pull-right" %> 
 			<% end %> 
 		</div>
 
