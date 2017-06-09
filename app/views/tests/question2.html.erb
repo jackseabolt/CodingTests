@@ -8,7 +8,7 @@
 
 			<div class="form_group">
 			<%= form_tag question2_path(@test), :method=> 'get' do %>
-				<h5>2. CSS helps you control the appearance of HTML elements</h5>
+				<h5>2. CSS helps you control the appearance of HTML elements. True or false?</h5>
 				<div class="form-group">
 					<br />
 					<%= check_box_tag :answer2, true, false, id: 'true_checkbox' %>
@@ -27,7 +27,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Continue", question3_path, class: "btn btn-success pull-right" %> 
+				<%= link_to "Next Question", question3_path, class: "btn btn-success pull-right" %> 
 			<% end %> 
 		</div>
 
