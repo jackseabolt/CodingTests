@@ -14,7 +14,7 @@ class TestsController < ApplicationController
 			new_score = @test.score += 1
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "Wrong answer" 
+			flash.now[:danger] = "Wrong answer." 
 		end
 	end
 
@@ -31,7 +31,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 	
@@ -52,7 +52,7 @@ class TestsController < ApplicationController
 			end
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is not what we were looking for" 
+			flash.now[:danger] = "That is not what we were looking for." 
 		end
 	end
 
@@ -108,7 +108,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 
@@ -125,7 +125,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 
@@ -142,7 +142,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 
@@ -159,7 +159,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 
@@ -176,7 +176,7 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer].present? && params[:answer] != correct_answer
-			flash.now[:danger] = "That is incorrect"
+			flash.now[:danger] = "That is incorrect."
 		end  
 	end 
 
