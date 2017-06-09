@@ -16,12 +16,12 @@
 						<label for="answer4">True</label>
 					</div>
 					<div class="form-group">
-						<%= check_box_tag :answer4, false, false, id: 'flase_checkbox' %> 
+						<%= check_box_tag :answer4, false, false, id: 'false_checkbox' %> 
 						<label for="answer4">False</label>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">
-							<%= submit_tag "Submit", class: 'btn-primary' %> 
+							<%= submit_tag "Submit", class: 'btn btn-primary' %> 
 						</div>
 					<% end %> 
 				<% end %> 
