@@ -63,7 +63,7 @@ class TestsController < ApplicationController
 		if correct_answer == user_answer
 			new_score = @test.score += 1
 			if @test.score == 4
-				flash.now[:success] = "You got all of the questions right! Amazing!"
+				flash.now[:success] = "You got the question right!"
 			elsif @test.score < 4 && @test.score > 0
 				flash.now[:success] = "You got the question right!"
 			else
@@ -71,6 +71,26 @@ class TestsController < ApplicationController
 			end 
 			@test.update(score: new_score)
 		elsif params[:answer4].present? && params[:answer4] != correct_answer
+			flash.now[:danger] = "That isn't what we wanted."
+		end
+	end 
+
+
+	def question5
+		@test = Test.find(params[:id])
+		correct_answer = "option2"
+		user_answer = params[:answer]
+		if correct_answer == user_answer
+			new_score = @test.score += 1
+			if @test.score == 5
+				flash.now[:success] = "You got all of the questions right! Amazing!"
+			elsif @test.score < 5 && @test.score > 0
+				flash.now[:success] = "You got the question right!"
+			else
+				flash.now[:danger] = "You got that one right!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That isn't what we wanted."
 		end
 	end 

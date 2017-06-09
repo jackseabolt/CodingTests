@@ -19,7 +19,9 @@
 
 $(document).on('turbolinks:load', function() {
 
-	// controlls the parallex scrolling for head_section
+
+
+	// controls the parallex scrolling for head_section
 	function parallex(){
 		var ypos = window.pageYOffset;
 		var pic = document.getElementById('head_section');
@@ -28,7 +30,40 @@ $(document).on('turbolinks:load', function() {
 	window.addEventListener('scroll', parallex);
 
 
-	// controlls true false uncheck for tests
+
+
+	// controls multiple choice uncheck for tests
+	function option1_checker(){
+		if(document.getElementById('option1_checkbox').checked){
+			$('#option2_checkbox').attr('checked', false);
+			$('#option3_checkbox').attr('checked', false); 
+		}
+	}
+	var option1 = document.getElementById('option1_checkbox');
+	option1.addEventListener('click', option1_checker);
+
+	function option2_checker(){
+		if(document.getElementById('option2_checkbox').checked){
+			$('#option1_checkbox').attr('checked', false);
+			$('#option3_checkbox').attr('checked', false); 
+		}
+	}
+	var option2 = document.getElementById('option2_checkbox');
+	option2.addEventListener('click', option2_checker);
+
+	function option3_checker(){
+		if(document.getElementById('option3_checkbox').checked){
+			$('#option1_checkbox').attr('checked', false);
+			$('#option2_checkbox').attr('checked', false); 
+		}
+	}
+	var option3 = document.getElementById('option3_checkbox');
+	option3.addEventListener('click', option3_checker);
+
+
+
+
+	// controls true false uncheck for tests
 	function false_checker(){
 		if(document.getElementById('false_checkbox').checked){
 			$('#true_checkbox').attr('checked', false); 
@@ -44,5 +79,9 @@ $(document).on('turbolinks:load', function() {
 	}
 	var true_check = document.getElementById('true_checkbox');
 	true_check.addEventListener('click', true_checker);
+
+
+
+
 
 });

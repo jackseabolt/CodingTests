@@ -21,14 +21,14 @@
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">
-							<%= submit_tag "Submit", class: 'btn btn-primary' %> 
+							<%= submit_tag "Submit", class: "btn btn-primary" %>
 						</div>
 					<% end %> 
 				<% end %> 
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Finish", results_path(@test), class: 'btn btn-success pull-right' %> 
+				<%= link_to "Next Question", question5_path(@test), class: 'btn btn-success pull-right' %> 
 			<% end %> 
 
 		</div>

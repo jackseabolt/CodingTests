@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 	get "/tests/question2/:id", to: "tests#question2", as: 'question2'
 	get "/tests/question3/:id", to: "tests#question3", as: 'question3'
 	get "/tests/question4/:id", to: "tests#question4", as: 'question4'
+	get "/tests/question5/:id", to: 'tests#question5', as: "question5"
 	get "/tests/results/:id", to: "tests#results", as: 'results'
 
 	#routes for javascript test
