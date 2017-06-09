@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+	<div class="row background-white">
+
+		<div class="col-md-8 col-md-push-2 score_container">
+			<h5 class="text-center">Current Score: <%= @test.score %></h5>
+		</div>
+		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
+
+			<div class="form_group">
+				<%= form_for question6_path(@test), method: :get do %> 
+					<h3>6. A &lt;h5&gt; tag will produce larger text than an &lt;h3&gt; tag. True or flase?</h3>
+					</br>
+					<div class="form-group">
+						<%= radio_button_tag :answer, true %>
+						<label for="answer4">True</label>
+					</div>
+					<div class="form-group">
+						<%= radio_button_tag :answer, false %> 
+						<label for="answer4">False</label>
+					</div>
+					<% if !flash[:success] && !flash[:danger] %>
+						<div class="form-group">
+							<%= submit_tag "Submit", class: "btn btn-primary top_spacing_tf" %>
+						</div>
+					<% end %> 
+				<% end %> 
+			</div>
+
+			<% if flash[:success] || flash[:danger] %> 
+				<%= link_to "Next Question", question7_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
+			<% end %> 
+
+		</div>
+	</div>
+</div>
