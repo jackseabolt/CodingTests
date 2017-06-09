@@ -12,23 +12,23 @@
 					<h3>4. HTML is case-sensitive. True or false?</h3>
 					</br>
 					<div class="form-group">
-						<%= check_box_tag :answer4, true, false, id: 'true_checkbox' %>
+						<%= radio_button_tag :answer4, true %>
 						<label for="answer4">True</label>
 					</div>
 					<div class="form-group">
-						<%= check_box_tag :answer4, false, false, id: 'false_checkbox' %> 
+						<%= radio_button_tag :answer4, false %> 
 						<label for="answer4">False</label>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">
-							<%= submit_tag "Submit", class: 'btn btn-primary' %> 
+							<%= submit_tag "Submit", class: "btn btn-primary" %>
 						</div>
 					<% end %> 
 				<% end %> 
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Finish", results_path(@test), class: 'btn btn-success pull-right' %> 
+				<%= link_to "Next Question", question5_path(@test), class: 'btn btn-success pull-right' %> 
 			<% end %> 
 
 		</div>

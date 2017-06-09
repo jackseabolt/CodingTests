@@ -1,0 +1,58 @@
+<div class="container-fluid">
+
+	<div class="row background-white">
+
+		<div class="col-md-8 col-md-push-2 score_container">
+			<h5 class="text-center">Current Score: <%= @test.score %></h5>
+		</div>
+		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
+
+			<div class="form-group">
+				<%= form_for question5_path(@test), method: :get do %> 
+					<h3>5. How do you wite an ordered list in HTML?</h3>
+					</br>
+					<div class="col-xs-4">
+						<h5>
+							&lt;ul&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&lt;&#47;ul&gt;<br />
+						</h5>
+						<label for="answer"></label>
+						<%= radio_button_tag :answer, 'option1' %>
+					</div>
+					<div class="col-xs-4">
+						<h5>
+							&lt;ol&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&lt;&#47;l&gt;<br />
+						</h5>
+						<label for="answer"></label>
+						<%= radio_button_tag :answer, 'option2' %>
+					</div>
+					<div class="col-xs-4">
+						<h5>
+							&lt;ordered&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
+							&lt;&#47;ordered&gt;<br />
+						</h5>
+						<label for="answer"></label>
+						<%= radio_button_tag :answer, 'option3' %>
+					</div>
+					<% if !flash[:success] && !flash[:danger] %>
+						<div class="form-group">
+							<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button" %>
+						</div>
+					<% end %> 
+				<% end %> 
+			</div>
+
+			<% if flash[:success] || flash[:danger] %> 
+				<%= link_to "Finish", results_path(@test), class: 'btn btn-success pull-right top_spacing_button' %> 
+			<% end %> 
+
+		</div>
+	</div>
+</div>

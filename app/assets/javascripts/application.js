@@ -19,7 +19,9 @@
 
 $(document).on('turbolinks:load', function() {
 
-	// controlls the parallex scrolling for head_section
+
+
+	// controls the parallex scrolling for head_section
 	function parallex(){
 		var ypos = window.pageYOffset;
 		var pic = document.getElementById('head_section');
@@ -27,22 +29,5 @@ $(document).on('turbolinks:load', function() {
 	}
 	window.addEventListener('scroll', parallex);
 
-
-	// controlls true false uncheck for tests
-	function false_checker(){
-		if(document.getElementById('false_checkbox').checked){
-			$('#true_checkbox').attr('checked', false); 
-		}
-	}
-	var false_check = document.getElementById('false_checkbox');
-	false_check.addEventListener('click', false_checker);
-
-	function true_checker(){
-		if(document.getElementById('true_checkbox').checked){
-			$('#false_checkbox').attr('checked', false); 
-		}
-	}
-	var true_check = document.getElementById('true_checkbox');
-	true_check.addEventListener('click', true_checker);
 
 });
