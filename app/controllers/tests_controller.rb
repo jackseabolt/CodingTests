@@ -21,7 +21,7 @@ class TestsController < ApplicationController
 	def question2
 		@test = Test.find(params[:id])
 		correct_answer = "true"
-		user_answer = params[:answer2]
+		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
 			if @test.score == 2
@@ -30,7 +30,7 @@ class TestsController < ApplicationController
 				flash.now[:success] = "That is correct!"
 			end 
 			@test.update(score: new_score)
-		elsif params[:answer2].present? && params[:answer2] != correct_answer
+		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That is incorrect"
 		end  
 	end 
@@ -59,7 +59,7 @@ class TestsController < ApplicationController
 	def question4
 		@test = Test.find(params[:id])
 		correct_answer = "false"
-		user_answer = params[:answer4]
+		user_answer = params[:answer]
 		if correct_answer == user_answer
 			new_score = @test.score += 1
 			if @test.score == 4
@@ -70,7 +70,7 @@ class TestsController < ApplicationController
 				flash.now[:danger] = "You got that one right!"
 			end 
 			@test.update(score: new_score)
-		elsif params[:answer4].present? && params[:answer4] != correct_answer
+		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That isn't what we wanted."
 		end
 	end 
@@ -83,7 +83,7 @@ class TestsController < ApplicationController
 		if correct_answer == user_answer
 			new_score = @test.score += 1
 			if @test.score == 5
-				flash.now[:success] = "You got all of the questions right! Amazing!"
+				flash.now[:success] = "You got it right! Amazing!"
 			elsif @test.score < 5 && @test.score > 0
 				flash.now[:success] = "You got the question right!"
 			else
@@ -93,6 +93,91 @@ class TestsController < ApplicationController
 		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That isn't what we wanted."
 		end
+	end 
+
+	def question6
+		@test = Test.find(params[:id])
+		correct_answer = "false"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 6
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def question7
+		@test = Test.find(params[:id])
+		correct_answer = "option3"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 7
+				flash.now[:success] = "That's also right! You're doing great!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def question8
+		@test = Test.find(params[:id])
+		correct_answer = "option1"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 8
+				flash.now[:success] = "All questions right so far! Good job!"
+			else
+				flash.now[:success] = "That is correct! Good job!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def question9
+		@test = Test.find(params[:id])
+		correct_answer = "true"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 9
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def question10
+		@test = Test.find(params[:id])
+		correct_answer = "option3"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 10
+				flash.now[:success] = "You got all of the questions right! Amazing!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
 	end 
 
 	def results

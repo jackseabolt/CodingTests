@@ -8,8 +8,8 @@
 		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
 
 			<div class="form_group">
-				<%= form_for question4_path(@test), method: :get do %> 
-					<h3>4. HTML is case-sensitive. True or false?</h3>
+				<%= form_for question6_path(@test), method: :get do %> 
+					<h3>6. A &lt;h5&gt; tag will produce larger text than an &lt;h3&gt; tag. True or flase?</h3>
 					</br>
 					<div class="form-group">
 						<%= radio_button_tag :answer, true %>
@@ -28,7 +28,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Next Question", question5_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
+				<%= link_to "Next Question", question7_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
 			<% end %> 
 
 		</div>

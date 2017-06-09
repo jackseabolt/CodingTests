@@ -8,16 +8,20 @@
 		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
 
 			<div class="form_group">
-				<%= form_for question4_path(@test), method: :get do %> 
-					<h3>4. HTML is case-sensitive. True or false?</h3>
+				<%= form_for question10_path(@test), method: :get do %> 
+					<h3>10. Who first developed HTML?</h3>
 					</br>
 					<div class="form-group">
-						<%= radio_button_tag :answer, true %>
-						<label for="answer4">True</label>
+						<%= radio_button_tag :answer, 'option1' %>
+						<label for="answer">Brendan Eich</label>
 					</div>
 					<div class="form-group">
-						<%= radio_button_tag :answer, false %> 
-						<label for="answer4">False</label>
+						<%= radio_button_tag :answer, 'option2' %>
+						<label for="answer">Yukihiro Matsumoto</label>
+					</div>
+					<div class="form-group">
+						<%= radio_button_tag :answer, 'option3' %>
+						<label for="answer">Tim Berners-Lee</label>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">
@@ -28,9 +32,10 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Next Question", question5_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
+				<%= link_to "Finish", results_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
 			<% end %> 
 
 		</div>
 	</div>
 </div>
+

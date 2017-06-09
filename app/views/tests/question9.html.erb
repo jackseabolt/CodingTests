@@ -9,7 +9,7 @@
 
 			<div class="form_group">
 				<%= form_for question4_path(@test), method: :get do %> 
-					<h3>4. HTML is case-sensitive. True or false?</h3>
+					<h3>9. HTML stands for HyperText Markup Language. True or false?</h3>
 					</br>
 					<div class="form-group">
 						<%= radio_button_tag :answer, true %>
@@ -28,7 +28,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Next Question", question5_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
+				<%= link_to "Next Question", question10_path(@test), class: 'btn btn-success pull-right top_spacing_tf' %> 
 			<% end %> 
 
 		</div>

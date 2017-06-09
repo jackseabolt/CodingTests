@@ -7,36 +7,28 @@
 		</div>
 		<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 question_container">
 
-			<div class="form-group">
-				<%= form_for question5_path(@test), method: :get do %> 
-					<h3>5. How do you wite an ordered list in HTML?</h3>
+			<div class="form_group">
+				<%= form_for question4_path(@test), method: :get do %> 
+					<h3>7. Which tag would you use to contain a section of JavaScript in your HTML code?</h3>
 					</br>
 					<div class="col-xs-4">
 						<h5>
-							&lt;ul&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&lt;&#47;ul&gt;<br />
+							&lt;style&gt;
+							
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option1' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
-							&lt;ol&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&lt;&#47;l&gt;<br />
+							&lt;javascript&gt;
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option2' %>
 					</div>
 					<div class="col-xs-4">
 						<h5>
-							&lt;ordered&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&nbsp;&nbsp;&lt;li&gt;&lt;&#47;li&gt;<br />
-							&lt;&#47;ordered&gt;<br />
+							&lt;script&gt;
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option3' %>
@@ -50,7 +42,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %> 
-				<%= link_to "Next Question", question6_path(@test), class: 'btn btn-success pull-right top_spacing_button' %> 
+				<%= link_to "Next Question", question8_path(@test), class: 'btn btn-success pull-right top_spacing_button' %> 
 			<% end %> 
 
 		</div>

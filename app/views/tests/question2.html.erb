@@ -11,23 +11,23 @@
 				<h5>2. CSS helps you control the appearance of HTML elements. True or false?</h5>
 				<div class="form-group">
 					<br />
-					<%= radio_button_tag :answer2, true %>
+					<%= radio_button_tag :answer, true %>
 					<label for="answer2">True</label>
 				</div>
 				<div class="form-group">
-					<%= radio_button_tag :answer2, false %>
+					<%= radio_button_tag :answer, false %>
 					<label for="answer2">False</label>
 				</div> 
 				<% if !flash[:success] && !flash[:danger] %>
 					<div class="form-group">
-						<%= submit_tag "Submit", class: "btn btn-primary" %>
+						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_tf" %>
 					</div>
 				<% end %>
 			<% end %>
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Next Question", question3_path, class: "btn btn-success pull-right" %> 
+				<%= link_to "Next Question", question3_path, class: "btn btn-success pull-right top_spacing_tf" %> 
 			<% end %> 
 		</div>
 
