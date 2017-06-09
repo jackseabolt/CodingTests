@@ -20,7 +20,7 @@ class TestsController < ApplicationController
 
 	def question2
 		@test = Test.find(params[:id])
-		correct_answer = "<style>"
+		correct_answer = "true"
 		user_answer = params[:answer2]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
