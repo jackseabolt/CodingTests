@@ -1,5 +1,6 @@
 class CsstestsController < ApplicationController
-
+	before_action :authenticate_user!, only: [:destroy]
+	
 	def index 
 		@test = Csstest.new 
 		@tests = Csstest.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
