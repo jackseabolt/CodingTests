@@ -162,9 +162,10 @@
 		line-height: 45px; 
 	}
 }
-@media scren and (max-width: 450px) {
-	.home_page_images {
-		left: 5px;
+@media screen and (max-width: 450px) {
+	.home_page_section {
+		left: 70px; 
+		padding-left: 5px;
 	}
 
 }
