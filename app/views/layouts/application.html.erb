@@ -13,19 +13,19 @@
 
   <body>
   		<%= render 'layouts/nav' %>
-  		<div class="container-fluid">
-			<div class="row background-white">
-				<div class="col-md-8 col-md-push-2">
-					<% flash.each do |key, message| %> 
+  		<% flash.each do |key, message| %> 
+	  		<div class="container-fluid">
+				<div class="row background-white">
+					<div class="col-md-8 col-md-push-2">
+					
 						<div id="myAlert" class="alert alert-<%= key %> text-center">
-						<a href="#current-pane" class="close" data-target="myAlert" data-dismiss="alert" aria-label="close" id="hide">&times;</a>
-							<p><%= message %></p>
+							<a href="#current-pane" class="close" data-target="myAlert" data-dismiss="alert" aria-label="close" id="hide">&times;</a>
+								<p><%= message %></p>
 						</div>
-
-					<% end %>
+					</div>
 				</div>
 			</div>
-		</div> 
+		<% end %> 
     <%= yield %>
     	<div class="container-fluid">
 			<div class="row footer">
