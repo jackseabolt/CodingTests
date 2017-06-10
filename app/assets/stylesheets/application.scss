@@ -143,6 +143,12 @@ body {
 		text-decoration: none; 
 	} 
 }
+@media screen and (min-width: 1500px){
+	.question_container {
+		padding-bottom: 140px;
+		padding-top: 100px;
+	}
+}
 @media screen and (max-width: 767px){
 	.home_page_images {
 		padding: 0px; 
