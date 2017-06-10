@@ -157,7 +157,7 @@
 @media screen and (max-width: 500px) {
 	.home_page_section {
 		position: relative; 
-		left: 50px; 
+		left: 0px; 
 	}
 	.title {
 		line-height: 45px; 
@@ -165,11 +165,11 @@
 }
 @media screen and (max-width: 450px) {
 	.home_page_section {
-		left: 70px; 
+		left: 50px; 
 		padding-left: 0px;
 	}
 	.home_page_description {
-		padding-left: 10px;
+		padding-left: 20px;
 	}
 
 }
