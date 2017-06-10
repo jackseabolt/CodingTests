@@ -24,14 +24,14 @@
 					</div>
 				<% if !flash[:success] && !flash[:danger] %>
 					<div class="form-group">
-						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button" %>
+						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_tf" %>
 					</div>
 				<% end %>
 			<% end %>
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Next Question", jsquestion9_path(@test), class: "btn btn-success pull-right top_spacing_button" %> 
+				<%= link_to "Next Question", jsquestion9_path(@test), class: "btn btn-success pull-right top_spacing_tf" %> 
 			<% end %> 
 		</div>
 
