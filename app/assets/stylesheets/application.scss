@@ -17,7 +17,9 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
+body {
+	background-color:#323232;
+}
 
 .background-white {
 	background-color: #fff !important;
@@ -30,8 +32,7 @@
 .footer {
 	background-color: #2e2e2e;
 	padding-top: 70px; 
-	padding-bottom: 140px; 
-	margin-top: 20px; 
+	padding-bottom: 140px;  
 	text-align: center; 
 	color: white; 
 	a {
@@ -111,8 +112,8 @@
 	margin-top: 10px;
 }
 .question_container {
-	padding-bottom: 80px;
-	padding-top: 40px;
+	padding-bottom: 90px;
+	padding-top: 50px;
 }
 .score_container {
 	padding-top: 50px;
