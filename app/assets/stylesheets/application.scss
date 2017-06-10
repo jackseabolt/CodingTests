@@ -165,7 +165,7 @@
 }
 @media screen and (max-width: 450px) {
 	.home_page_images {
-		padding: 0px;
+		padding: 0px; 
 		left: 5px;
 	}
 	.home_page_section {
@@ -175,5 +175,11 @@
 	.home_page_description {
 		padding-left: 20px;
 	}
-
 }
+@media screen and (max-width: 395px) {
+	.home_page_images {
+		padding: 0px;
+		top: 25px; 
+	}
+}
+
