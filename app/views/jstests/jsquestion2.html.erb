@@ -10,7 +10,7 @@
 			<%= form_tag jsquestion2_path(@test), :method=> 'get' do %>
 				<h5>2. Write a line of javascript that selects a div with an id of "target"</h5>
 				<div class="form-group">
-					<%= text_area_tag :answer2, params[:answer2], class: 'form-control' %>
+					<%= text_area_tag :answer, params[:answer], class: 'form-control' %>
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
 					<div class="form-group">
@@ -21,7 +21,7 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Continue", jsquestion3_path, class: "btn btn-success pull-right" %> 
+				<%= link_to "Continue", jsquestion3_path(@test), class: "btn btn-success pull-right" %> 
 			<% end %> 
 		</div>
 

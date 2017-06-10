@@ -29,7 +29,7 @@
 					<% @tests.each do |t| %> 
 						<div class="col-md-12 index_test">
 							<h4>CSS Test</h4>
-							<h5>Score: <%= t.score %>/3</h5>
+							<h5>Score: <%= t.score %>/10</h5>
 							<p><i><%= time_ago_in_words(t.created_at) %></i></p>
 							<%= link_to "Delete", csstest_path(t), method: :delete, class: 'btn btn-danger' %> 
 						</div>

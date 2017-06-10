@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+	<div class="row background-white">
+		<div class="col-sm-8 col-sm-push-2 score_container">
+			<h5 class="text-center">Current Score: <%= @test.score %></h5>
+		</div>
+		<div class="col-sm-6 col-sm-push-3 question_container">
+
+			<div class="form_group">
+			<%= form_tag jsquestion6_path(@test), :method=> 'get' do %>
+				<h5>6. How would you print the first value in an array called 'people'?</h5>
+				<br />
+				<div class="col-xs-4">
+					<h5>
+						array people(1); 
+					</h5>
+					<label for="answer"></label>
+					<%= radio_button_tag :answer, 'option1' %>
+				</div>
+				<div class="col-xs-4">
+					<h5>
+						people[1]
+					</h5>
+					<label for="answer"></label>
+					<%= radio_button_tag :answer, 'option2' %>
+				</div>
+				<div class="col-xs-4">
+					<h5>
+						people[0]
+					</h5>
+					<label for="answer"></label>
+					<%= radio_button_tag :answer, 'option3' %>
+				</div>
+				<% if !flash[:success] && !flash[:danger] %>
+					<div class="form-group">
+						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button" %>
+					</div>
+				<% end %>
+			<% end %>
+			</div>
+
+			<% if flash[:success] || flash[:danger] %>
+				<%= link_to "Next Question", jsquestion7_path(@test), class: "btn btn-success pull-right top_spacing_button" %> 
+			<% end %> 
+		</div>
+
+	</div>
+
+</div>
