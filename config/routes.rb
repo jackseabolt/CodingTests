@@ -25,6 +25,13 @@ Rails.application.routes.draw do
 	get "/jstests/question1/:id", to: "jstests#jsquestion1", as: 'jsquestion1'
 	get "/jstests/question2/:id", to: "jstests#jsquestion2", as: 'jsquestion2'
 	get "/jstests/question3/:id", to: "jstests#jsquestion3", as: 'jsquestion3'
+	get "/jstests/question4/:id", to: "jstests#jsquestion4", as: 'jsquestion4'
+	get "/jstests/question5/:id", to: "jstests#jsquestion5", as: 'jsquestion5'
+	get "/jstests/question6/:id", to: "jstests#jsquestion6", as: 'jsquestion6'
+	get "/jstests/question7/:id", to: "jstests#jsquestion7", as: 'jsquestion7'
+	get "/jstests/question8/:id", to: "jstests#jsquestion8", as: 'jsquestion8'
+	get "/jstests/question9/:id", to: "jstests#jsquestion9", as: 'jsquestion9'
+	get "/jstests/question10/:id", to: "jstests#jsquestion10", as: 'jsquestion10'
 	get "/jstests/results/:id", to: "jstests#jsresults", as: 'jsresults'
 
 	#routes for css test

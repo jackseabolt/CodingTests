@@ -20,7 +20,7 @@ class JstestsController < ApplicationController
 	def jsquestion2
 		@test = Jstest.find(params[:id])
 		correct_answer = "document.getElementById('target');"
-		user_answer = params[:answer2]
+		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
 			if @test.score == 2
@@ -29,7 +29,7 @@ class JstestsController < ApplicationController
 				flash.now[:success] = "That is correct!"
 			end 
 			@test.update(score: new_score)
-		elsif params[:answer2].present? && params[:answer2] != correct_answer
+		elsif params[:answer].present? && params[:answer] != correct_answer
 			flash.now[:danger] = "That is incorrect"
 		end  
 	end 
@@ -54,6 +54,125 @@ class JstestsController < ApplicationController
 			flash.now[:danger] = "That is not what we were looking for" 
 		end
 	end
+
+	def jsquestion4
+		@test = Jstest.find(params[:id])
+		correct_answer = "option1"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion5
+		@test = Jstest.find(params[:id])
+		correct_answer = 'true'
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion6
+		@test = Jstest.find(params[:id])
+		correct_answer = "option3"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion7
+		@test = Jstest.find(params[:id])
+		correct_answer = "option1"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion8
+		@test = Jstest.find(params[:id])
+		correct_answer = "option1"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion9
+		@test = Jstest.find(params[:id])
+		correct_answer = "true"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
+
+	def jsquestion10
+		@test = Jstest.find(params[:id])
+		correct_answer = "option3"
+		user_answer = params[:answer]
+		if user_answer == correct_answer
+			new_score = @test.score  += 1
+			if @test.score == 2
+				flash.now[:success] = "That's also right! Good job!"
+			else
+				flash.now[:success] = "That is correct!"
+			end 
+			@test.update(score: new_score)
+		elsif params[:answer].present? && params[:answer] != correct_answer
+			flash.now[:danger] = "That is incorrect"
+		end  
+	end 
 
 	def jsresults
 		@test = Jstest.find(params[:id])
