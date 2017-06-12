@@ -251,6 +251,7 @@ RSpec.describe TestsController, type: :controller do
 		it 'assigns @test' do 
 			expect(assigns(:test)).to eq(test1)
 		end 
+		
 	end 
 
 end
