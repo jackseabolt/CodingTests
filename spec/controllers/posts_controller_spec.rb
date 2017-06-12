@@ -220,7 +220,7 @@ RSpec.describe TestsController, type: :controller do
 
 		it "returns HTTP success" do 
 			expect(response).to be_success
-			expect(response).to have_htttp_status(200)
+			expect(response).to have_http_status(200)
 		end 
 
 		it "renders question10 template" do 
@@ -241,6 +241,7 @@ RSpec.describe TestsController, type: :controller do
 
 		it "returns HTTP success" do 
 			expect(response).to be_success
+			expect(response).to have_http_status(200)
 		end 
 
 		it "renders results template" do 
