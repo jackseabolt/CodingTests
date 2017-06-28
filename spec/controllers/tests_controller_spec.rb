@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TestsController, type: :controller do
 	
-	let(:test1) { Test.create }
+	let(:test1) { Test.create(score: 0) }
 
 	describe "GET #index" do 
 
@@ -29,22 +29,27 @@ RSpec.describe TestsController, type: :controller do
 
 	describe 'GET #question1' do 
 
-		before do 
-			get :question1, params: {id: test1.id}
-		end 
-
 		it "returns with HTTP success" do
+			get :question1, params: {id: test1.id}
 			expect(response).to be_success
 			expect(response).to have_http_status(200)
 		end
 
 		it "renders question1 template" do 
+			get :question1, params: {id: test1.id}
 			expect(response).to render_template('question1')
 		end 
 
 		it 'assigns @test' do 
+			get :question1, params: {id: test1.id}
 			expect(assigns(:test)).to eq(test1)
 		end
+
+		it 'updates score if params match answer' do 
+			get :question1, params: { id: test1.id, answer: '<p>'}
+			test1.reload
+			expect(test1.score).to eq(1)
+		end 
 
 	end 
 
@@ -252,6 +257,24 @@ RSpec.describe TestsController, type: :controller do
 			expect(assigns(:test)).to eq(test1)
 		end 
 		
+	end 
+
+	describe "DELETE #destroy" do 
+
+		before do 
+			delete :destroy, params: {id:test1.id}
+		end
+
+		# this test require config.include Devise::Test::ControllerHelpers, type: :controller 
+		# be added to rails helper
+		it "redirects to new_user_session_path with no user login" do 
+			expect(response).to redirect_to new_user_session_path
+		end 
+
+		it "rediects to tests_path when logged in" do 
+
+		end 
+
 	end 
 
 end

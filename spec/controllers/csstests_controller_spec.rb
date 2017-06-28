@@ -51,7 +51,7 @@ RSpec.describe CsstestsController, type: :controller do
 	describe 'GET #cssquestion2' do 
 
 		before do 
-			get :cssquestion2, params { id:test1.id }
+			get :cssquestion2, params: { id:test1.id }
 		end 
 
 		it 'returns HTTP success' do 
@@ -72,7 +72,7 @@ RSpec.describe CsstestsController, type: :controller do
 	describe 'GET #cssquestion3' do 
 
 		before do 
-			get :cssquestion3, params { id: test1.id }
+			get :cssquestion3, params: { id: test1.id }
 		end 
 
 		it 'returns HTTP success' do 
@@ -87,11 +87,6 @@ RSpec.describe CsstestsController, type: :controller do
 		it 'assigns @test' do 
 			expect(assigns(:test)).to eq(test1)
 		end 
-
-	end 
-
-	decribe 'GET #cssquestion4' do 
-
 
 	end 
 
