@@ -60,7 +60,7 @@ RSpec.describe CsstestsController, type: :controller do
 		end 
 
 		it 'renders cssquestion2 template' do 
-			expect(response).to render_tempalte('cssquestion2')
+			expect(response).to render_template('cssquestion2')
 		end
 
 		it 'assigns @test' do 
