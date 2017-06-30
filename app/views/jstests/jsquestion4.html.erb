@@ -4,7 +4,7 @@
 		<div class="col-sm-8 col-sm-push-2 score_container">
 			<h5 class="text-center">Current Score: <%= @test.score %></h5>
 		</div>
-		<div class="col-sm-6 col-sm-push-3 question_container">
+		<div class="col-sm-6 col-sm-push-3 col-xs-10 col-xs-push-1 question_container">
 
 			<div class="form_group">
 			<%= form_tag jsquestion4_path(@test), :method=> 'get' do %>
@@ -33,7 +33,7 @@
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
 					<div class="form-group">
-						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button" %>
+						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button top_spacing_button" %>
 					</div>
 				<% end %>
 			<% end %>
