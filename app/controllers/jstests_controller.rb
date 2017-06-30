@@ -38,7 +38,7 @@ class JstestsController < ApplicationController
 	
 	def jsquestion3 
 		@test = Jstest.find(params[:id])
-		correct_answer = "var x = document.getElementById('target');"
+		correct_answer = "option1"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score += 1
