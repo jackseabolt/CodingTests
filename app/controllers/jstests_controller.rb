@@ -8,7 +8,7 @@ class JstestsController < ApplicationController
 
 	def jsquestion1 
 		@test = Jstest.find(params[:id])
-		correct_answer = "<script>"
+		correct_answer = 'option2'
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			flash.now[:success] = "That is correct!"
@@ -21,7 +21,7 @@ class JstestsController < ApplicationController
 
 	def jsquestion2
 		@test = Jstest.find(params[:id])
-		correct_answer = "document.getElementById('target');"
+		correct_answer = "option3"
 		user_answer = params[:answer]
 		if user_answer == correct_answer
 			new_score = @test.score  += 1
