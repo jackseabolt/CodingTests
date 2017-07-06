@@ -265,14 +265,38 @@ RSpec.describe TestsController, type: :controller do
 			delete :destroy, params: {id:test1.id}
 		end
 
-		# this test require config.include Devise::Test::ControllerHelpers, type: :controller 
-		# be added to rails helper
-		it "redirects to new_user_session_path with no user login" do 
-			expect(response).to redirect_to new_user_session_path
-		end 
+		context "when not logged in" do 
+			
+			# this test require config.include Devise::Test::ControllerHelpers, type: :controller 
+			# be added to rails helper
+			it "redirects to new_user_session_path" do 
+				expect(response).to redirect_to new_user_session_path
+			end
 
-		it "rediects to tests_path when logged in" do 
+			it 'responds HTTP redirect' do 
+				expect(response).to have_http_status(302)
+			end 
 
+			it 'does not delete test' do 
+				expect(Test.all.count).to eq(1)
+			end 
+
+		end
+
+	end 
+
+	describe "POST #create" do 
+
+		before do 
+			post3 = Test.create(score:0)
+		end
+
+		xit 'returns HTTP success' do 
+			expect(response).to be_success
+		end
+
+		xit 'adds test to database' do 
+			expect(Test.all.count).to eq(2)
 		end 
 
 	end 

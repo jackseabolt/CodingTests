@@ -204,9 +204,4 @@ class CsstestsController < ApplicationController
 			params.require(:csstest).permit(:score, :user_id)
 		end
 
-
-
-
-
-
 end
