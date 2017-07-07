@@ -10,7 +10,7 @@
 			<%= form_tag cssquestion1_path(@test), method: :get do %>
 				<h5>1. Write the opening HTML tag you would place CSS inside.</h5>
 				<div class="form-group">
-					<%= text_area_tag :answer, params[:answer], class: 'form-control'%>
+					<%= text_area_tag :answer, params[:answer], class: 'form-control' %>
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
 				<div class="form-group">
