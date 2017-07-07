@@ -10,20 +10,20 @@
 			<%= form_tag jsquestion8_path(@test), :method=> 'get' do %>
 				<h5>8. Who first developed JavaScript?</h5>
 					</br>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option1' %>
-						<label for="answer">Brendan Eich</label>
+						<label for="answer">&nbsp; &nbsp; Brendan Eich</label>
 					</div>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option2' %>
-						<label for="answer">Yukihiro Matsumoto</label>
+						<label for="answer">&nbsp; &nbsp; Yukihiro Matsumoto</label>
 					</div>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option3' %>
-						<label for="answer">Tim Berners-Lee</label>
+						<label for="answer">&nbsp; &nbsp; Tim Berners-Lee</label>
 					</div>
 				<% if !flash[:success] && !flash[:danger] %>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_tf" %>
 					</div>
 				<% end %>
@@ -31,7 +31,9 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Next Question", jsquestion9_path(@test), class: "btn btn-success pull-right top_spacing_tf" %> 
+				<div class="col-xs-12 vert_question">
+					<%= link_to "Next Question", jsquestion9_path(@test), class: "btn btn-success pull-right top_spacing_tf" %> 
+				</div>
 			<% end %> 
 		</div>
 

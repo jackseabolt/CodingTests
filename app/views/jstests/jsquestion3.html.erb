@@ -12,34 +12,22 @@
 					<h5>3. How would you set a variable to 3 + 5?</h5>
 					<br />
 					<div class="col-xs-12 vert_question">
-						<div class="col-xs-1 col-sm-push-1">
-							<%= radio_button_tag :answer, 'option1' %>
-						</div>
-						<div class="col-xs-10 col-sm-push-1">
-							<h5>
-								var x = 3 + 5; 
-							</h5>
-						</div>
+						<%= radio_button_tag :answer, 'option1' %>
+						<label for="answer_option1">
+							&nbsp;&nbsp;var x = 3 + 5; 
+						</label>			
 					</div>
 					<div class="col-xs-12 vert_question">
-						<div class="col-xs-1 col-sm-push-1">
-							<%= radio_button_tag :answer, 'option2' %>
-						</div>
-						<div class="col-xs-10 col-sm-push-1">
-							<h5>
-								variable = 3 + 5; 
-							</h5>
-						</div>
+						<%= radio_button_tag :answer, 'option2' %>
+						<label for="answer_option2">
+							&nbsp;&nbsp;variable = 3 + 5; 
+						</label>	
 					</div>
 					<div class="col-xs-12 vert_question">
-						<div class="col-xs-1 col-sm-push-1">
-							<%= radio_button_tag :answer, 'option3' %>
-						</div>
-						<div class="col-xs-10 col-sm-push-1">
-							<h5>
-								constant x = 3 + 5; 
-							</h5>
-						</div>
+						<%= radio_button_tag :answer, 'option3' %>
+							<label for="answer_option3">
+								&nbsp;&nbsp;constant x = 3 + 5; 
+							</label>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
 						<div class="form-group">

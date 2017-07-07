@@ -10,17 +10,17 @@
 				<%= form_tag jsquestion2_path(@test), :method=> 'get' do %>
 					<h5>2. How would you write a line of javascript that selects a div with an id of "target"</h5>
 					<br />
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option1' %>
-						<label for="answer">&nbsp;script.getElementById(#target);</label>
+						<label for="answer">&nbsp;&nbsp;script.getElementById(#target);</label>
 					</div>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option2' %>
-						<label for="answer">&nbsp;document.getElementById('#target');</label>
+						<label for="answer">&nbsp;&nbsp;document.getElementById('#target');</label>
 					</div>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= radio_button_tag :answer, 'option3' %>
-						<label for="answer">&nbsp;document.getElementById('target');</label>
+						<label for="answer">&nbsp;&nbsp;document.getElementById('target');</label>
 					</div>
 
 					<% if !flash[:success] && !flash[:danger] %>
