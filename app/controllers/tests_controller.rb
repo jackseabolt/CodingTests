@@ -8,9 +8,9 @@ class TestsController < ApplicationController
 
 	def question1 
 		@test = Test.find(params[:id])
-		correct_answer = "<p>"
+		correct_answer = /<p>/
 		user_answer = params[:answer]
-		if user_answer == correct_answer
+		if user_answer =~ correct_answer
 			flash.now[:success] = "That is correct!"
 			new_score = @test.score += 1
 			@test.update(score: new_score)
@@ -38,9 +38,9 @@ class TestsController < ApplicationController
 	
 	def question3 
 		@test = Test.find(params[:id])
-		correct_answer = "</div>"
+		correct_answer = /<\/div>/
 		user_answer = params[:answer]
-		if user_answer == correct_answer
+		if user_answer =~ correct_answer
 			new_score = @test.score += 1
 			if @test.score == 3
 				flash.now[:success] = "You got all the questions right so far! Great!"

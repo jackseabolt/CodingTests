@@ -9,7 +9,7 @@
 <div class="container-fluid background-white">
 
 	<div class="row">
-		<div class="col-sm-8 col-sm-push-2 top_section">
+		<div class="col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1 top_section">
 			<h4>HTML Test</h4>
 			<p>Test your knowledge of HTML with our online assessment. You may take the test as many times as you would like. Good luck!</p>
 			<%= form_for @test do |t| %>
@@ -23,7 +23,7 @@
 		<% if @tests.empty? %>
 
 		<% else %>
-			<div class="col-sm-8 col-sm-push-2">
+			<div class="col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
 				<h4>Previous Results</h4>
 				<br />
 					<% @tests.each do |t| %> 
