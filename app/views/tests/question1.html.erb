@@ -10,7 +10,7 @@
 			<%= form_tag question1_path(@test), method: :get do %>
 				<h5>1. How do you write an opening paragraph tag in HTML?</h5>
 				<div class="form-group">
-					<%= text_area_tag :answer, params[:answer], class: 'form-control'%>
+					<%= text_area_tag :answer, params[:answer], class: 'form-control', id: 'answer' %>
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
 				<div class="form-group">
