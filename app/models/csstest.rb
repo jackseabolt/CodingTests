@@ -1,2 +1,3 @@
 class Csstest < ApplicationRecord
+
 end

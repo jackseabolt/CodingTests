@@ -10,16 +10,16 @@
 			<%= form_tag jsquestion9_path(@test), :method=> 'get' do %>
 				<h5>9. JavaScript is also known as ECMAScript. True or false?</h5>
 				<br />
-				<div class="form-group">
+				<div class="col-xs-12 vert_question">
 					<%= radio_button_tag :answer, true, false %>
-					<label for="answer">True</label>
+					<label for="answer">&nbsp; &nbsp; True</label>
 				</div>
-				<div class="form-group">
+				<div class="col-xs-12 vert_question">
 					<%= radio_button_tag :answer, false, false %>
-					<label for="answer">False</label>
+					<label for="answer">&nbsp; &nbsp; False</label>
 				</div>
 				<% if !flash[:success] && !flash[:danger] %>
-					<div class="form-group">
+					<div class="col-xs-12 vert_question">
 						<%= submit_tag "Submit", class: "btn btn-primary top_spacing_tf" %>
 					</div>
 				<% end %>
@@ -27,7 +27,9 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Next Question", jsquestion10_path(@test), class: "btn btn-success pull-right top_spacing_tf" %> 
+				<div class="col-xs-12 vert_question">
+					<%= link_to "Next Question", jsquestion10_path(@test), class: "btn btn-success pull-right top_spacing_tf" %> 
+				</div>
 			<% end %> 
 		</div>
 

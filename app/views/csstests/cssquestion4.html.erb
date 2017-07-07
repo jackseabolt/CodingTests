@@ -5,27 +5,27 @@
 		<div class="col-sm-8 col-sm-push-2 score_container">
 			<h5 class="text-center">Current Score: <%= @test.score %></h5>
 		</div>
-		<div class="col-sm-6 col-sm-push-3  question_container">
+		<div class="col-sm-6 col-sm-push-3 col-xs-10 col-xs-push-1  question_container">
 
 			<div class="form_group">
 				<%= form_for cssquestion4_path(@test), method: :get do %> 
 					<h5>4. Which tag would you use to link an HTML document to an external stylesheet?</h5>
 					</br>
-					<div class="col-xs-4">
+					<div class="col-xs-6">
 						<h5>
 							&lt;link rel="stylesheet" type="text/css" href="theme.css"&gt;
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option1' %>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-xs-6">
 						<h5>
 							&lt;style rel="stylesheet" type="text/css" href="theme.css"&gt;
 						</h5>
 						<label for="answer"></label>
 						<%= radio_button_tag :answer, 'option2' %>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-xs-6">
 						<h5>
 							&lt;a rel="stylesheet" type="text/css" href="theme.css"&gt;
 						</h5>
@@ -33,7 +33,7 @@
 						<%= radio_button_tag :answer, 'option3' %>
 					</div>
 					<% if !flash[:success] && !flash[:danger] %>
-						<div class="form-group">
+						<div class="form-group col-xs-12">
 							<%= submit_tag "Submit", class: "btn btn-primary top_spacing_button" %>
 						</div>
 					<% end %> 
@@ -41,7 +41,9 @@
 			</div>
 
 			<% if flash[:success] || flash[:danger] %>
-				<%= link_to "Next Question", cssquestion5_path(@test), class: "btn btn-success pull-right top_spacing_button" %> 
+				<div class="col-xs-12">
+					<%= link_to "Next Question", cssquestion5_path(@test), class: "btn btn-success pull-right top_spacing_button" %> 
+				</div>
 			<% end %> 
 		</div>
 
